@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div{
+border:solid;
+width:100px;
+hight:100px;
+position:relative;
+background-color:red;"
+}
+</style>
+</head>
+<body>
+
+<div  id="id1"></div>
+
+
+<script src="../js/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function()
+{
+
+$("div").click(function()
+{
+$(this).animate({"position":"relative","left":"300px","width":"7opx","height":"70px"});
+$(this).animate({"position":"relative","top":"300px","width":"7opx","height":"70px"});
+$(this).animate({"position":"relative","left":"00px","width":"70px","height":"70px"});
+$(this).animate({"position":"relative","top":"00px","width":"7opx","height":"70px"});
+
+});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head><title>priyanka</title></head>
+<body>
+<h1>REGISTRATION FORM</h1>
+<form>
+first name:<input type="text" placeholder="enter your name">
+<input type="checkbox" name="city1" value="Bangalore"/>Bangalore
+	<input type="checkbox" name="city2" value="Mysore"/>Mysore
+				<button type="button" value="submit">submit form</button>
+				<span id="id3">Value:</span>
+				</form>
+				<script src="../js/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function()
+{
+$("button").click(function(){ 
+/*var x=$("#text").val().trim();
+if(x==" "){
+
+$("span").text("please enter value");
+}
+else
+{
+$("span").text(x);
+}*/
+/*var pattern="^[A-Z a-z]$";
+var va=$("input[type=text]").val();
+if(va.match(pattern)==null||va.trim().length==0){
+$("span").text("please enter chars");
+console.log("Please enter");
+}
+else{
+$("span").text("you have enter"+va);
+console.log(va);
+}*/
+/*var radElement=$("input[type=radio]:checked");
+if(radElement.val()==undefined){
+$("span").text("please select");}
+else{
+$("span").text("please select")
+}*/
+var checkElement=$("input[type=checkbox]:checked");
+if(checkElement.val()==undefined){
+$("span").text("please select");}
+else{
+var check="";
+checkElement.each(
+function(){
+check=check+","+$(this).val();
+
+}
+
+)
+$("span").text(check);
+}
+});
+});
+</script>
+</body>
+</html>
+				
+

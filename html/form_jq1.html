@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Form1</title><!--Registration Form-->
+</head>
+<body>
+	<h1>Employee Registration Form</h1>
+	<form >
+	Employee Name :
+	<input type="text" autofocus name="name" minlength="6" maxlength="15" placeholder="Full Name" pattern="[A-Z]{1}[a-z ]+[A-Z]{1}[a-z]+"/>
+	<br /><br />
+	Employee Password:
+	<input type="password" name="password" placeholder="Password" size="10" pattern="[a-z A-Z 0-9 !@#$%&*]{8,}" required ><br /><br />
+	Favorite Color:
+	<input type="color" /><br /><br />
+	Employement Date:
+	<input type="date" name="date" placeholder="DD/MM/YYYY"/><br /><br />
+	E-Mail:
+	<input type="text" name="e-mail" placeholder="abc@fgh.aa" pattern="[a-z0-9]+[@]{1}[a-z]+[.]{1}[a-z]+" required ><br /><br />
+	Employee Gender:
+	<input type="radio" name="gender" value="Male" checked/>Male
+	<input type="radio" name="gender" value="Female"/>Female
+	<br /><br />
+	Cities lived in:
+	<input type="checkbox" name="city1" value="Bangalore"/>Bangalore
+	<input type="checkbox" name="city2" value="Mysore"/>Mysore
+	<input type="checkbox" name="city3" value="Mumbai"/>Mumbai
+	<input type="checkbox" name="city4" value="Pune"/>Pune
+	<br /><br />
+	Address:
+	<textarea name="address" ></textarea><br /><br />
+	Technologies:
+	<select name="tech" multiple>
+		<option value="PHP" selected>PHP</option>
+		<option value="HTML">HTML</option>
+		<option value="CSS">CSS</option>
+		<option value="Javascript">Javascript</option>
+	</select></br /><br />
+	<input type="submit" value="Submit Form"/>
+	<input type="reset" value="Reset Form"/>
+	<input type="button" value="Click Me"/>
+	<span id="sp1"></span>
+	</form>
+<script src="../js/jquery-3.3.1.js"></script>	
+<script>
+/*	function callMe(){
+		console.log("On Foused");
+	}
+	function callMe1(){
+		console.log("On Blur");
+	}
+	*/
+	$(document).ready	(function(){
+		$("input[type=button]").click(function(){
+		var result="";
+		result="Your name is"+$("input[type=text]").val();
+		result= result+"Selected gender is:"+$("input[type=radio]:checked").val();
+		
+		/*var ele=$("input[type=checkbox]:checked")
+		for(var i=0;i<ele.length;i++){
+			console.log(ele[i].value);
+		}*/
+		var chk="";
+		$("input[type=checkbox]:checked").each(
+			function(){
+				chk=chk+","+$(this).val()
+				});
+		result=result+"Cities you have lived in are: "+chk;
+			$("span").text(result);
+			
+		var sel="";
+		$("option:selected").each(
+			function(){
+				sel=sel+","+$(this).val()
+				});
+		result=result+"Technologies known: "+sel;
+			$("span").text(result);
+		
+		});
+
+	
+	});
+</script>
+</body>
+</html>

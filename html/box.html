@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div{
+border-radius:80px;
+border:solid;
+width:100px;
+hight:100px;
+display:inline-block;
+padding:50px;
+box-sizing:border-box;
+margin-right:20px;
+}
+</style>
+</head>
+<body>
+
+<div  id="id1" onclick="changeColor(this)"  style="background-color:red; text-align:center;">first</div>
+<div  id="id2" onclick="changeColor(this)"  style="background-color:blue;text-align:center; ">second</div>
+<div  id="id3" onclick="changeColor(this)" style="background-color:green;text-align:center; ">third</div>
+<div id="id4" onclick="changeColor(this)" style="background-color:Gray;text-align:center;">forth</div>
+<input type="button" value="start" onclick="changeColor(this)">
+<input type="button" value="stop" onclick="changeColor(this)">
+
+</body>
+<p="id"></p>
+<script>
+function changeColor(temp) {
+  /*temp.style.display="none";*/
+ /* temp.style.backgroundColor="black"*/
+ /*temp.style.position="relative";*/
+ /*temp.style.top="500px"*/
+ /*setInterval(hello,1000);*/
+/* function hello()
+ {
+ console.log("hello");
+ }*/
+  setInterval(bounce,1000);
+  }
+  var flag=true;
+  function bounce()
+  {
+  if(flag)
+  {
+  document.getElementById("id1").style.position="relative";
+  document.getElementById("id1").style.top="200px";
+  flag=false;
+  }
+  else
+  {
+  
+  document.getElementById("id1").style.position="relative";
+  document.getElementById("id1").style.top="0px";
+  flag=true;
+  }
+  }
+  
+  var a=serInterval(bounce,1000,temp);
+  clearInterval(a);
+  clearTimeout(a);
+  
+document.getElementById("id1").style=a;
+</script>
+</html>

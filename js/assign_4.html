@@ -1,0 +1,32 @@
+<!Doctype html>
+<head>
+<title>Resizing</title>
+</head>
+<body>
+		<img src="../images/poem.jpg" id="img" alt="Poem" width="250px" height="250px"><br />
+		<input type="button" name="zoomin" onclick="zoomin()" value="Zoom In"/>
+		<input type="button" name="zoomout" onclick="zoomout()" value="Zoom Out"/>
+		
+<script>
+	function zoomin(){
+		var x= document.getElementById("img").width;
+		var y= document.getElementById("img").height;
+		console.log(x,y);
+		document.getElementById("img").width=(x+100);
+		document.getElementById("img").height=(y+100);
+		
+		
+		}
+	
+	function zoomout(){
+		var x= document.getElementById("img").width;
+		var y= document.getElementById("img").height;
+		console.log(x,y);
+		document.getElementById("img").width=(x-100);
+		document.getElementById("img").height=(y-100);	
+		
+	}
+</script>
+		
+</body>
+</html>

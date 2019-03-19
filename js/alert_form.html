@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Form2</title><!--Display input values at the end of form on the click of button-->
+</head>
+<body>
+	<h1>Employee Registration Form</h1>
+	<form>
+	Employee Name :
+	<input id="id1" type="text" name="name" placeholder="Full Name" pattern="[A-Za-z ]+"/>
+	<br /><span id="name">Value:</span>
+	<br />
+	Employee Gender:
+	<input type="radio" name="gender" class="gender" value="Male" />Male
+	<input type="radio" name="gender" class="gender" value="Female"/>Female
+	<br /><span id="gen">Gender:</span>
+	<br />
+	Cities lived in:
+	<input type="checkbox" name="city1" value="Bangalore"/>Bangalore
+	<input type="checkbox" name="city2" value="Mysore"/>Mysore
+	<input type="checkbox" name="city3" value="Mumbai"/>Mumbai
+	<input type="checkbox" name="city4" value="Pune"/>Pune
+	
+	<br />
+	<span id="city">City:</span><br />
+	<input type="button" id="id2" value="Submit Form" />
+	</form>
+	<br />
+	
+<script src="jquery-3.3.1.js"></script>
+<script>
+	$(document).ready(function(){
+	$("#id2").click(function(){
+	/*Alert if no input is given*/
+	/*var va=$("input[type=text]").val().trim();
+	if(va==""){
+		$("#name").text("Please enter the value.");
+		console.log(va);
+		}
+	else{
+		$("#name").text(va);
+		console.log(va);
+		} */
+		
+	/*Check the pattern*/
+	var pattern  =  "^[A-Za-z ]+$";  
+	var va=$("input[type=text]").val();
+	if(va.match(pattern)==null||va.trim().length==0){
+		$("#name").text("Please match the pattern");
+		
+		}
+	else{
+		$("#name").text(va);
+		
+		}
+	
+	
+	/*Check the gender*/
+
+	var radELE=$("input[type=radio]:checked");
+	if(radELE.val()== undefined){
+		$("#gen").text("Select your gender");
+      }
+	 else
+		{
+		var gen=$("input[type=radio]:checked").val();
+		console.log(gen);
+		$("#gen").text(gen);
+		}
+/*To check city*/
+	var chk=$("input[type=checkbox]:checked");
+	if(chk.val()== undefined){
+		$("#city").text("Select your city");
+      }
+	 else
+		{				
+			var check="";
+			chk.each(
+			function(){
+
+				check=check+","+$(this).val();
+				console.log(check);
+
+				});
+			$("#city").text(check);
+		}
+		
+	});
+		
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><title>priyanka</title>
+<style> p{color:red;}
+h1{color:blue;}
+</style>
+</head>
+<body>
+<h1>hello world</h1>
+<p style="color:red" alt="paragraph">hello world</p>
+<p>my paragraph</p>
+<p>my paragraph</p>
+<input type="button" id="button1" >show</button>
+<input type="button" id="button2" >hide</button>
+<script src="../js/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function()
+{
+/*alert("paragraph clicked");*/
+$("P").click(function()
+{
+/*alert("clicked");
+alert("clicked"+document.getElementByid("id").innerHTML);*/
+/*$("p").text("hello");*/
+/*$("p").css("background-color","blue");*/
+/*$("p").css({"background-color":"blue","color":"blue"});*/
+/*$("p").attr("title","MyTitle");*/
+/*console.log($(this).text());*/
+/*$(this).css("background-color","blue");*/
+/*$(this).attr("title","my title");*/
+/*$(this).css("display","none");*/
+/*$("p").html("<b>replace</b>");*/
+$("#button1").click(
+function()
+{
+/*$("p").hide();*/
+$("p").slideUp();
+$("p").slideDown();
+});
+$("#button2").click(
+function()
+{
+/*$("p").hide();*/
+$("p").slideUp();
+$("p").slideDown();
+});
+});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head><title>priyanka</title></head>
+<body>
+<h1>REGISTRATION FORM</h1>
+<form>
+
+   name:<input id="id1" type="text" onchange="pop()" maxlength="15" placeholder="Full Name" pattern="[A-Z]{1}[a-z ]+[A-Z]{1}[a-z]+"/>
+	<span id="disp1"></span><br>
+select gender:<input type="radio" name="gender">male
+				<input type="radio" name="gender">female
+				<br>
+				<button type="button" value="submit">submit form</button>
+				<button type="reset"  value="reset">reset form</button>
+				</form>
+				<script>
+
+	function pop(){
+		document.getElementById("disp1").innerHTML="You entered:wrong pattern "+document.getElementById("id1").value;
+		
+	
+		
+			}
+				</script>
+				</body>
+				</html>
+				
+

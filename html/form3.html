@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Form2</title><!--Display input values at the end of form on the click of button-->
+</head>
+<body>
+	<h1>Employee Registration Form</h1>
+	<form onsubmit="callMe()">
+	Employee Name :
+	<input id="id1" type="text" autofocus name="name"  maxlength="15" placeholder="Full Name" pattern="[A-Z]{1}[a-z ]+[A-Z]{1}[a-z]+"/>
+
+	<br /></br>
+	Employee Password:
+	<input id="id2" type="password" name="password" placeholder="Password" size="10" pattern="[a-z A-Z 0-9 !@#$%&*]{8,}" required ><br /><br />
+	Favorite Color:
+	<input id="id3" type="color" /><br /><br />
+	Employement Date:
+	<input id="id4" type="date" name="date" placeholder="DD/MM/YYYY"/><br /><br />
+	E-Mail:
+	<input id="id5" type="text" name="e-mail" placeholder="abc@fgh.aa" pattern="[a-z0-9]+[@]{1}[a-z]+[.]{1}[a-z]+" required ><br /><br />
+	Employee Gender:
+	<input id="id5a" class="c1" type="radio" onchange="pop1()" name="gender" value="Male" />Male
+	<input id="id6" class="c1" type="radio" onchange="pop1()" name="gender" value="Female"/>Female
+
+	<br /><br />
+	Cities lived in:
+	<input id="id7" class="c2" type="checkbox" name="city1" value="Bangalore"/>Bangalore
+	<input id="id8" class="c2"type="checkbox" name="city2" value="Mysore"/>Mysore
+	<input id="id9" class="c2" type="checkbox" name="city3" value="Mumbai"/>Mumbai
+	<input id="id10" class="c2" type="checkbox" name="city4" value="Pune"/>Pune
+	<br /><br />
+	Address:
+	<textarea id="id11" name="address" ></textarea><br /><br />
+	Technologies:
+	<select name="tech" multiple>
+		<option id="id12" class="c3" value="PHP" selected>PHP</option>
+		<option id="id13" class="c3" value="HTML">HTML</option>
+		<option id="id14" class="c3" value="CSS">CSS</option>
+		<option id="id15" class="c3" value="Javascript">Javascript</option>
+	</select></br /><br />
+	<input type="button" value="Submit Form" onclick="display()"/>
+	</form>
+	The entered values are :<br /><span id="output"></span>
+	
+	
+<script>
+
+	/*function pop1(){
+		document.getElementById("disp").innerHTML="You entered: "+document.getElementById("id1").value;
+	}
+		document.getElementById("disp1").innerHTML="You entered: "+document.getElementById("id2").value;
+		document.getElementById("disp3").innerHTML="You entered: "+gender;
+		var gender="";
+		var arr=document.getElementsByClassName("c1");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].checked){
+					gender=arr[i].value;
+					break;}
+			}
+			
+		var city="";
+		var arr=document.getElementsByClassName("c2");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].checked){
+					city=city+" "+arr[i].value;
+				}
+		
+			}
+		var tech="";
+		var arr=document.getElementsByClassName("c3");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].selected){
+					tech=tech+" "+arr[i].value;
+	}
+	
+	
+	function callMe(){
+		console.log("On Foused");
+	}
+	function callMe1(){
+		console.log("On Blur");
+	}
+
+	*/
+	
+	function display(){
+		var gender="";
+		var arr=document.getElementsByClassName("c1");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].checked){
+					gender=arr[i].value;
+					break;}
+			}
+			
+		var city="";
+		var arr=document.getElementsByClassName("c2");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].checked){
+					city=city+" "+arr[i].value;
+				}
+		
+			}
+		var tech="";
+		var arr=document.getElementsByClassName("c3");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].selected){
+					tech=tech+" "+arr[i].value;
+				}
+			}
+		document.getElementById("output").innerHTML="Your name is: "+document.getElementById("id1").value+"<br />"+
+		"Your Password is: "+document.getElementById("id2").value+"<br />"+
+		"Favourite Color: "+document.getElementById("id3").value+"<br />"+
+		"Employement Date is:"+document.getElementById("id4").value+"<br />"+
+		"E-mail ID is:"+document.getElementById("id5").value+"<br />"+
+		" Gender is: " +gender+ "<br />"+
+		"Cities lived in: "+city+"<br />"+
+		"Your Address:" +document.getElementById("id11").value+"<br />"+
+		"Known Technologies: "+tech;
+		
+	}
+	
+	/*function pop(){
+		var gen="";
+		var arr=document.getElementsByClassName("c1");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].checked){
+					gen=arr[i].value;
+					break;}
+			}
+	}*/
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head><title>priyanka</title></head>
+<body>
+<h1>REGISTRATION FORM</h1>
+<form>
+first name:<input type="text" placeholder="enter your name">
+last name:<input type="text"><br>
+password:<input type="password"><br>
+phone no:<input type="text"><br>
+select gender:<input type="radio" name="gender">male
+				<input type="radio" name="gender">female
+				<br>
+				<button type="submit" value="submit">submit form</button>
+				</form>
+				<script src="../js/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function()
+{
+$("button").click(function(){ 
+var x=$("#text").val().trim();
+if(x==" "){
+
+$("span").text("please enter value");
+}
+else
+{
+$("span").text(x);
+}
+});
+});
+</script>
+</body>
+</html>
+				
+

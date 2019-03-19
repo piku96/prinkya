@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<body onload="callMe()">
+first name:<input type id="id1" type="text"></br>
+second name:<input type id="id2" type="text"></br>
+
+<input type="button" value="add" onclick="callM()"/>
+the output is:<span id="id3"></span>
+the output is:<input id="id4" type="text"/></br>
+first name<input id="id5" type="text" onfocus="bacColor(this)"  onblur="bgChange(this)"  /></br>
+second name<input id="id6" type="text" onfocus="bacColor(this)"  onblur="bgChange(this)"  /></br>
+full name<input id="id7" type="text"/></br>
+
+
+<script>
+function callMe(){
+  var x=null;
+  console.log(typeof(x));
+  }
+  function callM()
+  {
+ 
+	  var x=document.getElementById("id1").value;
+	  var y=document.getElementById("id2").value;
+	  var z=parseInt(x)+parseInt(y);
+	  console.log(z);
+	  document.getElementById("id3").innerHTML=z;
+	  document.getElementById("id4").value=z
+	  document.getElementById("id4").style.backgroundColor="blue";
+	  
+	 
+	  var a=document.getElementById("id5").value;
+	  var b=document.getElementById("id6").value;
+	 
+	 } 
+	function bacColor(temp) {
+	temp.style.backgroundColor="blue"
+	console.log(temp.value);
+	
+	} 
+	  
+	  
+ function bgchange(temp){
+
+temp1.style.backgroundColor="yellow";
+temp1.value;
+}
+  
+</script>
+</body>
+</html>

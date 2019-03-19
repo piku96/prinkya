@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div{
+border-radius:80px;
+border:solid;
+width:100px;
+hight:100px;
+display:inline-block;
+padding:50px;
+box-sizing:border-box;
+margin-right:20px;
+position:relative;
+}
+</style>
+</head>
+<body>
+
+<div  id="id1"  style="background-color:red; text-align:center;">first</div>
+<div  id="id2"   style="background-color:blue;text-align:center; ">second</div>
+<div  id="id3"  style="background-color:green;text-align:center; ">third</div>
+<div id="id4"  style="background-color:Gray;text-align:center;">forth</div>
+
+<script src="../js/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function()
+{
+
+$("div").click(function()
+{
+/*$(this).css({"position":"relative","top":"500px"});
+$(this).animate({"position":"relative","top":"0px"});*/
+$(this).animate({'"position":"relative","left":"300px","width":"12opx","height":"120px"},1000);
+$(this).animate({'"position":"relative","left":"300px","width":"14opx","height":"140px"},1000);
+$(this).animate({'"position":"relative","left":"0px","width":"16opx","height":"180px"},1000);
+$(this).animate({'"position":"relative","left":"0px","width":"16opx","height":"180px"},1000);
+});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>Blocks</title>
+	<style>
+		div{
+		border:solid;
+			background-color: gray;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 90px 40px;
+  cursor: pointer;
+			
+		}
+	</style>
+</head>
+<body>
+<div id="id1">
+</div>
+<div id="id2">
+</div>
+<div id="id3">
+</div>
+
+
+<input  type="button" value="start" onclick=start()/>
+<input  type="button" value="emergency" onclick=emergency()/>
+<input type="button" value="patient Saved" onclick=emergency()/>
+
+		<script>
+	var x=1;
+function start(){
+changeColor();
+setInterval(changeColor,5000);
+
+
+}
+f
+
+var check =true;
+function change(){
+if(check){
+$("#id1").css("backgroundColor","black");
+check=false;
+}
+else{
+$("#id1").css("backgroundColor","green");
+check=true;
+
+}
+
+}
+}
+
+
+</script>
+
+</body>
+</html>

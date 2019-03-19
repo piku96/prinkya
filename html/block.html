@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Blocks</title>
+	<style>
+		div{
+			border:solid;
+			width:100px;
+			height:100px;
+			display:inline-block;
+			padding:25px;
+			box-sizing:border-box;
+			margin-right:20px;
+			position:relative;
+		}
+	</style>
+</head>
+<body>
+
+		<div id="d1" style="background-color:blue; text-align:center;">First Box</div>
+		<div id="d2" style="background-color:yellow; text-align:center;">Second Box</div>
+		<div id="d3" style="background-color:red;text-align:center;">Third Box</div>
+		<div id="d4" style="background-color:green;text-align:center;">Fourth Box</div>
+		
+<script src="../js/jquery-3.3.1.js"></script>		
+
+<script>
+	$(document).ready(function(){
+			$("div").click(function(){
+			$(this).animate({"position":"relative","top":"500px"},1000);
+			$(this).animate({"position":"relative","top":"0px"});
+			});
+			/*$("div").click(function(){
+			$(this).css({"position":"relative","top":"500px"});
+			});*/
+			
+			
+	});
+</script>
+
+</body>
+</html>

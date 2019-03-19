@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Welcome</title>
+<link href="../css/style.css" rel="stylesheet"/>
+
+<style>
+	p{
+		color:blue;
+	}
+</style>
+</head>
+<body>
+	<p style="font-size:14pt;">Hello World1</p>
+	<p style="font-size:14pt;">Hello World2</p>
+	<p style="font-size:14pt;">Hello World3</p>
+	<input type="button" id="btn1" name="show" value="Show"/>
+	<input type="button" id="btn2" name="hide" value="Hide"/>
+	<input type="button" id="btn3" name="hide" value="Toggle"/>
+<script src="../js/jquery-3.3.1.js" ></script>
+<script>
+	$(document).ready(function(){
+			$("#btn2").click(function(){
+			$("p").slideUp(1000);
+			});
+			
+			$("#btn1").click(function(){
+			$("p").slideDown(1000);
+			});
+			
+			$("#btn3").click(function(){
+			$("p").fadeToggle(1000);
+			});
+	});
+	
+		/*hide() show() slideUp() slideDown()*/
+		
+		/*$("p").click(function(){
+			console.log($(this).text());
+			$(this).text("Replaced");
+			$(this).css({"background-color":"yellow","font-size":"30px"});
+			$("p").attr("title","MyTitle");
+			$(this).css("display","none");
+			$(this).html("<b>Replaced</b>");*/
+			
+			
+		
+	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Blocks</title>
+	<style>
+		div{
+			border:solid;
+			width:100px;
+			height:100px;
+			display:inline-block;
+			padding:25px;
+			box-sizing:border-box;
+			margin-right:20px;
+			position:relative;
+		}
+	</style>
+</head>
+<body>
+
+		<div id="d1" style="background-color:blue; text-align:center;">First Box</div>
+		
+<script src="../js/jquery-3.3.1.js"></script>		
+
+<script>
+	$(document).ready(function(){
+			$("div").click(function(){
+			$(this).animate({"position":"relative","left":"300px","width":"120px","height":"120px"},1000);
+			$(this).animate({"position":"relative","top":"300px","width":"140px","height":"140px"},1000);
+			$(this).animate({"position":"relative","left":"0px","width":"160px","height":"160px"},1000);
+			$(this).animate({"position":"relative","top":"0px","width":"180px","height":"180px"},1000);
+			});
+			/*$("div").click(function(){
+			$(this).css({"position":"relative","top":"500px"});
+			});*/
+			
+			
+	});
+</script>
+
+</body>
+</html>

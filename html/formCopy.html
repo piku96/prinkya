@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Form</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/93EE3FB8-A814-034E-B94A-76CBB4CD8EE1/main.js" charset="UTF-8"></script></head>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  label
+{
+  font-style:century;
+}
+body
+{
+  background-color:rgb(65, 58, 58);
+  color: white;
+  text-align: center;
+  font-family: cursive;
+}
+h1
+{
+  background-color: dimgrey;
+}
+form
+{
+  background-color: dimgray;
+ }
+ 
+</style>
+
+<body>
+
+  <h1 style="text-align:center;">Dynamic Form</h1>
+  <fieldset>
+    <legend>Personal Details</legend>
+    <form  onsubmit="callme()">
+      <label> First name :</label>
+      <input type="text" id="violet" name="fname" placeholder="enter your name" pattern="[A-Z]+"onchange="valid(this)">
+      <span id="val"></span>
+      </br>
+      <label> Password :</label>
+      <input type="password" id="indigo" name="Password" oninput="callme()" >
+      <span id="pass"></span>
+      </br>
+      <label> email :</label>
+      <input type="email" id="blue" name="email" onchange="callme()">
+      </br>
+      <label>Gender :</label>
+      <input type="radio" class="cl" name="Gender" value="male" onchange="callme()">Male
+      <input type="radio" class="cl" name="Gender" value="female" onchange="callme()">female
+      <span id="rad"> </span>
+      </br>
+      <label>select city :</label>
+      <select multiple>
+        <option class="drop" value="bangalore">bangalore</option>
+        <option class="drop" value="mysore">mysore</option>
+        <option class="drop" value="tumkur">tumkur</option>
+      </select>
+      </br>
+      <label>Address :</label>
+      </br>
+      <textarea name="add" id="green"></textarea>
+      </br>
+      <label>Languages Known:</label>
+      <input type="checkbox" class="check" value="kannada" name="Marital status">Kannada
+      <input type="checkbox" class="check" value="English" name="MaritalSstatus">English
+      </br>
+      <input type="submit" name="submit">
+      <input type="reset" name="reset">
+      <input type="button" name="click" onmouseover="callme()" value="click me">
+     <br>
+      YOUR ENTERED VALUES ARE:<span id="put"></span>
+    </form>
+  </fieldset>
+  <script>
+ function callme()
+    {
+
+        var a = document.getElementById("violet").value;
+        var b = document.getElementById("indigo").value;
+        var c = document.getElementById("blue").value;
+        var d = document.getElementById("green").value;
+        var arr=document.getElementsByClassName("cl"); /*ARRAY FOR RADIO BUTTON */
+        var chr=document.getElementsByClassName("check"); /*ARRAY FOR CHECK BOXES BUTTON */
+        var dpr=document.getElementsByClassName("drop"); /*ARRAY FOR DROP-DOWN */
+        var radioValue="";
+        var checkValue="";
+        var dropValue="";
+        for(var i=0;i<arr.length;i++)
+        {
+          if(arr[i].checked)
+          {
+          radioValue=arr[i].value;
+            break;
+          }
+        }
+        for(var i=0;i<chr.length;i++)
+        {
+          if(chr[i].checked)
+          {
+            checkValue=checkValue+", "+chr[i].value;
+          }
+        }
+
+        for(var i=0;i<dpr.length;i++)
+        {
+          if(dpr[i].selected)
+          {
+            dropValue=dropValue+", "+dpr[i].value;
+          }
+        }
+        var z = a+"<br>"+b+"<br>"+c+"<br>"+d+"<br>"+radioValue+"<br>"+checkValue+"<br>"+dropValue; 
+        document.getElementById("put").innerHTML =z;
+        document.getElementById("rad").innerHTML =radioValue;
+        document.getElementById("pass").innerHTML = document.getElementById("indigo").value;
+        
+    }
+    function changecolor(temp1)
+    {
+        temp1.style.backgroundColor="red";
+        
+    }
+    function changeback(temp2)
+    {
+        temp2.style.backgroundColor="green";
+    }
+    function valid(temp3)
+    {
+      var pattern  =  "^[A-Z]+$";
+      var vad=temp3.value;
+      if(vad.match(pattern)!=null)
+      {
+ document.getElementById("val").innerHTML ="please enter characters";    
+      }
+      else
+      {
+        document.getElementById("val").innerHTML =" ";
+      }
+}
+    
+  
+    
+    </script>
+</body>
+	var pattern  =  "^[A-Za-z]+$";
+      
+	var va=$("input[type=text]").val();
+	if(va.match(pattern)==null){
+		$("#name").text(va);
+		console.log(va);
+		}
+	else{
+		$("#name").text("Please match the pattern");
+		console.log("Please match the pattern");
+		}
+</html>

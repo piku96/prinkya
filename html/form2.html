@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Form3</title><!--Usage of onchange and oninput event-->
+</head>
+<body>
+	<h1>Employee Registration Form</h1>
+	<form onsubmit="callMe()">
+	Employee Name :
+	<input id="id1" type="text" autofocus name="name" onchange="pop()" maxlength="15" placeholder="Full Name" pattern="[A-Z]{1}[a-z ]+[A-Z]{1}[a-z]+"/>
+	<span id="disp1"></span>
+	<br /></br>
+	Employee Password:
+	<input id="id2" type="password" name="password" oninput="pop()" placeholder="Password" size="10" pattern="[a-z A-Z 0-9 !@#$%&*]{8,}" required >
+	<span id="disp2"></span>
+	<br /><br />
+	Favorite Color:
+	<input id="id3" type="color" onchange="pop()" />
+	<span id="disp3"></span>
+	<br /><br />
+	Employement Date:
+	<input id="id4" type="date" name="date" onchange="pop()" placeholder="DD/MM/YYYY"/>
+	<span id="disp4"></span>
+	<br /><br />
+	E-Mail:
+	<input id="id5" type="text" name="e-mail" placeholder="abc@fgh.aa" onchange="pop()" pattern="[a-z0-9]+[@]{1}[a-z]+[.]{1}[a-z]+" required >
+	<span id="disp5"></span>
+	<br /><br />
+	Employee Gender:
+	<input id="id5a" class="c1" type="radio" onchange="pop()" name="gender" value="Male" />Male
+	<input id="id6" class="c1" type="radio" onchange="pop()" name="gender" value="Female"/>Female
+	<span id="disp6"></span>
+	<br /><br />
+	Cities lived in:
+	<input id="id7" class="c2" type="checkbox" onchange="pop()" name="city1" value="Bangalore"/>Bangalore
+	<input id="id8" class="c2"type="checkbox" onchange="pop()" name="city2" value="Mysore"/>Mysore
+	<input id="id9" class="c2" type="checkbox" onchange="pop()" name="city3" value="Mumbai"/>Mumbai
+	<input id="id10" class="c2" type="checkbox" onchange="pop()" name="city4" value="Pune"/>Pune
+	<span id="disp7"></span>
+	<br /><br />
+	Address:
+	<textarea id="id11" name="address" onchange="pop()" ></textarea>
+	<span id="disp8"></span>
+	<br /><br />
+	Technologies:
+	<select name="tech" multiple>
+		<option id="id12" class="c3" onclick="pop()" value="PHP" selected>PHP</option>
+		<option id="id13" class="c3" onclick="pop()" value="HTML">HTML</option>
+		<option id="id14" class="c3" onclick="pop()" value="CSS">CSS</option>
+		<option id="id15" class="c3" onclick="pop()" value="Javascript">Javascript</option>
+	</select>
+	<span id="disp9"></span>
+	</br /><br />
+	<input type="button" value="Click Me" onclick="pop()" />
+	</form>
+	
+<script>
+
+	function pop(){
+		document.getElementById("disp1").innerHTML="You entered: "+document.getElementById("id1").value;
+		document.getElementById("disp2").innerHTML="You entered: "+document.getElementById("id2").value;
+		document.getElementById("disp3").innerHTML="You entered: "+document.getElementById("id3").value;
+		document.getElementById("disp4").innerHTML="You entered: "+document.getElementById("id4").value;
+		document.getElementById("disp5").innerHTML="You entered: "+document.getElementById("id5").value;
+		
+		var gender="";
+		var arr=document.getElementsByClassName("c1");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].checked){
+					gender=arr[i].value;
+					break;}
+			}
+		document.getElementById("disp6").innerHTML="You entered: "+gender;
+		
+		var city="";
+		var arr=document.getElementsByClassName("c2");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].checked){
+					city=city+" "+arr[i].value;
+				}
+		
+			}
+		document.getElementById("disp7").innerHTML="You entered: "+city;
+		
+		document.getElementById("disp8").innerHTML="You entered: "+document.getElementById("id11").value;
+		
+		var tech="";
+		var arr=document.getElementsByClassName("c3");
+			for(var i=0; i<arr.length;i++){
+				if(arr[i].selected){
+					tech=tech+" "+arr[i].value;
+				}
+			}
+		document.getElementById("disp9").innerHTML="You entered: "+tech;
+	}
+</script>
+</body>
+</html>
